@@ -1,0 +1,52 @@
+hr {
+    margin: 0;
+}
+
+.rodapé__título {
+    font-weight: 400;
+    color: var(--cor-do-texto);
+    margin-top: 17px;
+}
+
+/* Aqui eu coloquei para a lista do rodapé desaparecer quando estivesse 
+em uma tela inferior a 1024px! */
+
+.lista-rodape {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    
+    /* Aqui eu tormei todo o rodapé um container, alinhando todos os itens
+    dentro dele com o space around! */
+
+    .rodapé {
+        display: flex;
+        justify-content: space-around;
+        padding: 1em;
+    }
+
+    /* Aqui eu transformei cada item do roda pé em um container, 
+    alinhando o texto e a imagem! */
+
+    .lista-rodape__item {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Aqui eu alterei a tag ancora, tirando o sublinhado, alterando o tamanho da 
+    fonte, colocando uma cor de fonte e um espaçamento interno! */
+
+    .lista-rodape__link {
+        text-decoration: none;
+        color: var(--cor-do-item);
+        font-size: 14px;
+        padding: 1em;
+    }
+
+    /* Aqui eu coloquei para a lista do rodapé aparecer em telas de 1024px! */
+    
+    .lista-rodape {
+        display: block;
+    }
+}

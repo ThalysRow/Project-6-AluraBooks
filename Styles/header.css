@@ -1,0 +1,203 @@
+.cabecalho__menu-hamburger {
+    width: 24px;
+    height: 24px;
+    background-image: url(../assets/Menu.svg);
+    background-size: contain;
+    display: inline-block;  
+}
+
+/* Aqui eu transformei o cabecalho em um container com o display flex, separei os dois itens
+que estão dentro das dives com o space-between, além de alinhar eles no centro do container.
+Por fim, deixei o cabeçalho com uma posição relativa, para ficar em cima da lista menu,
+que tem a posição absoluta.  */
+
+.cabecalho {
+    background-color: var(--cor-branca);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Transformei as duas divs em containers com o display flex, além de centralizar todos os itens para 
+o centro do container.  */
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+/* Aqui eu coloquei um espaçamento interno nas imagens. */
+.container__imagem {
+    padding: 1em;
+}
+
+/* Aqui eu coloquei o display none para sumir com a lista, além de não ocupar espaço. Em seguida,
+coloquei sua posição "absolute" e como o cabeçalho está "relativo",a lista é jogada para baixo do
+cabeçalho com o auxílio do "top 100%" e não fica em cima. A última alteração foi para alterar a 
+largura da lista menu, colocando 60% da largura da tela */
+
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 60vw;
+}
+
+/* Aqui eu coloquei para a lista aparecer quando o usuário clicar no menu "hamburger" */
+
+.container__botao:checked~.lista-menu {
+    display: block;
+}
+
+/* Aqui eu coloquei um fundo branco na lista, colocando também um espaçamento interno dos itens
+de 1x a altura da fonte! */
+
+.lista-menu__titulo, .lista-menu__item {
+    background-color: var(--cor-branca);
+    padding: 1em;
+}
+
+/* Aqui eu coloquei a cor do título da lista de laranja, alterei a fonte e o seu peso! */
+.lista-menu__titulo {
+    color: var(--cor-amarela);
+    font-weight: 700;
+}
+
+/* Aqui eu alterei a cor dos itens da lista, coloquei todos em maiúsculos, alterei a fonte e 
+coloquei o peso de 400! */
+
+.lista-menu__link {
+    background: var(--cor-dos-itens-categorias);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+/* Aqui eu tirei a seleção da caixa botão que ficava visível após o click */
+.container__botao {
+    display: none;
+}
+
+/* Aqui eu coloquei para o título da página desaparecer em telas inferiodes a
+1024px de largura */
+
+.container__titulo {
+    display: none;
+}
+
+/* Aqui eu coloquei para a lista que fica dentro de categorias desaparecer em telas inferiores
+a resolução de 1024px */
+.opções {
+    display: none;
+}
+
+.container__texto {
+    display: none;
+}
+
+/* Iniciei as alterações para a tela de tablets */
+
+@media screen and (min-width: 1024px) {
+    
+    /* Aqui eu coloquei a fonte no título da página, colocando um tamanho de 30px! */
+
+    .container__titulo, .container__titulo--negrito {
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+
+    /* Aqui eu estilizei o título da página, colocando um peso de fonte de 400, 
+    colocando para ela aparecer, já que fora de resolução de 1024px ela está
+    com display none, acrescentando também uma márgem de 3em à direita! */
+
+    .container__titulo {
+        font-weight: 400;
+        display: block;
+        margin-right: 3em;
+    }
+
+    /* Apenas adicionando negrito no "Alura" */
+
+    .container__titulo--negrito {
+        font-weight: 700;
+    }
+
+    /* Aqui transformei toda a parte do header em um container! */
+
+    .opções {
+        display: flex;
+        
+    }
+
+    /* Coloquei um espaçamento entre as opções do header, colocando o texto 
+    em maiúsculo! */
+
+    .opções__item {
+        padding: 0 1em;
+        text-transform: uppercase;
+    }
+
+    /* Aqui eu tirei o sublinhado das ancoras, trocando a cor do texto delas! */
+
+    .opções__link {
+        text-decoration: none;
+        color: var(--cor-do-texto);
+        
+    }
+
+    /* Aqui adicionei uma class ao botão de favoritar, só para deixar ele transparente 
+    nas telas de 1024px */
+
+    .container__imagem-transparente {
+        display: none;
+    }
+
+    /* Aqui tirei também da tela de 1024px o menu-hamburger */
+    .cabecalho__menu-hamburger {
+        display: none;
+    }
+
+    /* Aqui estilizei a lista que abre logo abaixo de categorias, colocando para aparecer e
+    também, deixando sua largura automática (do tamanho do próprio texto  */
+
+    .opções__botão:checked~.lista-menu {
+        display: block;
+        width: auto;
+    }
+
+    /* Aqui tirei o checkbox do botão com o display! */
+    
+    .opções__botão {
+        display: none;
+    }
+}
+
+/* Aqui eu comecei as estilizações para tela de desktop! */
+
+@media screen and (min-width: 1728px) {
+    
+    
+    
+    .container__link {
+        display: flex;
+        text-decoration: none;
+        align-items: center;
+        color: var(--cor-do-texto);
+    }
+
+    .cabecalho {
+        padding: 0 2em;
+    }
+
+    .opções {
+        margin-right: auto;
+    }
+
+    .container__texto {
+        display: block;
+        font-size: 20px;
+    }
+}

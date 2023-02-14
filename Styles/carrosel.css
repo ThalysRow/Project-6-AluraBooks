@@ -1,0 +1,188 @@
+
+/* Aqui eu editei o título dos últimos livros lançados, colocando a cor do texto de amarela,
+a cor de fundo de branca, o peso da fonte de 700, alinhando o texto ao centro, com o tamanho
+da fonte de 16px, tudo em capslock, com uma margem interna de 1em topo, 0 direita, 0.5em baixo
+e 0 esquerda. */
+
+.carrosel__titulo {
+    color: var(--cor-amarela);
+    background-color: var(--cor-de-fundo);
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.12rem;
+    text-transform: uppercase;
+    padding: 1em 0 0.5em 0;
+}
+
+/* Aqui eu coloquei que os slides dos últimos livros tem 100% da largura de tela! */
+
+.swiper-slide img {
+    width: 100%;
+}
+
+
+/* Aqui eu tirei os botões dos slides de vista com o display none! */
+.swiper-button-prev, .swiper-button-next {
+    display: none;
+}
+
+/* Aqui eu coloquei os botões de navegação dos slides na posição inicial, com uma 
+margem de meia fonte cima e baixo! */
+
+.swiper-pagination {
+    position: initial;
+    margin: 0.5em;
+}
+
+
+/* Aqui eu alterei tudo o que fica na primeira linha da coluna 1 e 2,
+tornando um container com o "display-flex", separando a primeira linha
+da coluna 1 e 2 com o space-between e colocando uma margem em baixo de 0.5 */
+
+.card__descricao {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+}
+
+
+/* Aqui eu transformei os botões do card em um container, com o display flex, colocando
+um espaça entre eles com o space-between! */
+
+.card__botoes {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Aqui eu alterei todo o container do card, colocando uma cor de fundo de branco, adicionando
+uma caixa sombreada, adicionando uma borda curva, colocando uma parce de 1em para cima e baixo,
+finalizando com um espaçamento interno de 1 para cima e baixo! */
+
+.card {
+    background: var(--cor-branca);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: 1em;
+    padding: 1em;
+}
+
+/* Aqui eu alterei o primeiro título do card, colocando um peso na fonte de 700 e trocando a cor 
+para amarelo! */
+
+.descricao__titulo {
+    font-weight: 700;
+    color: var(--cor-amarela);
+}
+
+/* Aqui eu alterei o segundo título do card, colocando a cor de azul, peso da fonte de 700, altura da fonte 
+de 18px e adicionando uma margem de 0.5 para cima e baixo! */
+
+.descricao__titulo__livro {
+    color: var(--cor-do-titulo);
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0.5em;
+}
+
+/* Aqui eu alterei o texo da descrição do card, colocando uma cor preta na fonte, peso de 400 e o tamanho
+de 14px! */
+
+.descricao__texto {
+    color: var(--cor-do-texto);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+/* Aqui eu alterei o botão do "Saiba Mais do card", tirando o sumblinhado da ancora logo no início, colocando uma
+margem interna de 1em para cima e baixo, 2.2em para esquerda e direita. Adicionei um peso de fonte de 700,
+coloquei a cor da fonte de branca e a cor de fundo do botão de amarelo! */
+
+.botoes__ancora {
+    text-decoration: none;
+    padding: 1em 2.2em;
+    font-weight: 700;
+    color: var(--cor-branca);
+    background-color: var(--cor-amarela);
+}
+
+/* Aqui eu coloquei um espaçamento nos botões, com 0.5 para esquerda e direita! */
+.botoes__item {
+    margin: 0 0.5em;
+}
+
+@media screen and (min-width: 1024px) {
+    
+    /* Aqui eu alterei o tamanho da fonte do texto "Últimos lançamentos"! */
+
+    .carrosel__titulo {
+        font-size: 26px;
+    }
+
+    /* Aqui eu adicionei uma margem nos botões de navegação da parte de cima! */
+
+    .swiper-pagination {
+        margin: 2em 0 3em 0;
+    }
+
+    /* Aqui eu alterei o tamanho dos livros em destaque, colocando para ocupar 60% 
+    da largura da página! */
+    .swiper {
+        width: 60%;
+    }
+
+    /* Aqui eu tornei as setas de navegação antes invisíveis, visíveis, além de subir um pouco 
+    com o top 60%! */
+
+    .swiper-button-prev, .swiper-button-next {
+        display: block;
+        top: 60%;
+    }
+/* Aqui eu alterei a largura do card para 40% do tamanho da tela, além de colocar uma margem de 3em cima 
+e baixo, centralizando as laterais! */
+
+    .card {
+        width: 40%;
+        margin: 3em auto;
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    
+ 
+    .carrosel__container {
+        display: flex;
+        margin: 0 20vw 3em 20vw;
+        align-items: center;
+    }
+
+    .swiper-pagination {
+        margin: 1em 0;
+    }
+
+    .swiper {
+        width: 50%;
+    }
+
+    .descricao__titulo {
+        font-size: 32px;
+    }
+
+    .descricao__texto {
+        font-size: 16px;
+    }
+
+    .card {
+        width: 60%;
+        margin-left: 3em;
+    }
+
+    .descricao { 
+        margin-right: 3em;
+    }
+
+    .botoes__ancora {
+        padding: 1em;
+        text-align: center;
+    }
+}

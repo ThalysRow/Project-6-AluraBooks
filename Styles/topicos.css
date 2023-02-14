@@ -1,0 +1,72 @@
+
+/* Aqui eu editei a área tópicos, colocando uma cor de fundo personalizada,
+além de alinhar todos os itens para o centro! */
+.tópicos {
+    background: var(--cor-dos-itens-categorias);
+    text-align: center;
+    padding: 2em;
+}
+
+/* Aqui eu alterei o título da área tópicos, colocando a cor da fonte branca, com 
+o peso de 300, sua altura de 1rem (16px) e um espaçamento interno de 1em (1x o tamanho da fonte) */
+
+.tópicos__título {
+    color: var(--cor-branca);
+    font-weight: 300;
+    font-size: 1rem;
+    padding: 1em;
+}
+
+/* Aqui eu transformei a lista dos tópicos em um container com o display flex, fazendo a quebra de linhas
+flax-wrap e centralizando os itens! */
+
+.tópicos__lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Aqui eu editei o texto de cada item, colocando uma margem de 2em (2x fonte) cima e baixo, 0.5em direita e esquerda,
+com o peso da fonte de 700! */
+
+.tópicos__item {
+    margin: 2em 0.5em;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* Aqui eu editei as ancoras de cada item do tópico, colocando a cor do texto de branco, a cor de fundo de amarela,
+tirando o sublinhado da ancora e colocando um espaçamento interno de 1em (1x fonte) cima e baixo, direita e esquerda! */
+
+.tópicos__link {
+    color: var(--cor-branca);
+    background-color: var(--cor-amarela);
+    text-decoration: none;
+    padding: 1em 1em;
+}
+
+@media screen and (min-width: 1024px) {
+    
+    .tópicos__título {
+        font-size: 24px;
+    }
+
+    .tópicos__link {
+        font-size: 24px;
+    }
+
+    .tópicos__item {
+        margin: 2em;    
+    }
+
+    .tópicos__lista {
+        row-gap: 1.5em;
+    }
+}
+
+@media screen and (min-width: 1728px) {
+    .tópicos {
+        padding: 1em 20vw;
+    }
+}
